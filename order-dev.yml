@@ -12,4 +12,5 @@ server:
 spring:
   application:
     name: order
-env:dev
+env:
+   dev
