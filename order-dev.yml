@@ -28,4 +28,4 @@ server:
   port: 8036
 
 env:
-   dev4
+   dev
