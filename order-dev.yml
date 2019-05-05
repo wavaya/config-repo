@@ -2,15 +2,31 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
-logging:
-  level:
-    com:
-      wayhua:
-        order: debug
-server:
-  port: 8070
+
 spring:
   application:
-    name: order
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wavaya/config-repo
+          username: wavaya
+          password: wayhua888
+  #          basedir:
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.31.226/sell?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+    open-in-view: true
+  jackson:
+    default-property-inclusion: non_null
+server:
+  port: 8036
+
 env:
    dev
