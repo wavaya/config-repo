@@ -9,6 +9,9 @@ spring:
           username: wavaya
           password: wayhua888
   #          basedir:
+  bus:
+      #Workaround for defect in https://github.com/spring-cloud/spring-cloud-bus/issues/124
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.profiles.active:${local.server.port:${server.port:0}}}}:${vcap.application.instance_id:${random.value}}
   rabbitmq:
     host: 192.168.31.59
     port: 5672
